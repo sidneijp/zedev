@@ -32,10 +32,12 @@ ALLOWED_HOSTS = config(
 DEFAULT_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.gis',
 ]
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'rest_framework_gis',
 ]
 
 LOCAL_APPS = [

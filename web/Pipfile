@@ -21,6 +21,7 @@ factory-boy = "*"
 python-decouple = "*"
 dj-database-url = "*"
 markdown = "*"
+djangorestframework-gis = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,14 +1,10 @@
-FROM python:3.8-alpine
+FROM python:3.8
 
-RUN apk update && apk upgrade
+RUN apt update && apt upgrade -y
 
 RUN pip install --no-cache-dir pipenv pip setuptools -U
 
-RUN apk add --no-cache --virtual .build-deps \
-    postgresql-dev linux-headers musl-dev \
-    ca-certificates gcc
-
-RUN rm -rf /var/cache/apk/*
+RUN apt install -y libpq-dev build-essential ca-certificates libgeos-dev libproj-dev libgdal-dev
 
 WORKDIR /code
 
