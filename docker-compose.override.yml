@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  db:
+    ports:
+      - 5432:5432
+  web:
+    volumes:
+      - ./web/src:/code/src
+      - ./web/tests:/code/tests
+      - ./web/Pipfile:/code/Pipfile
+      - ./web/pytest.ini:/code/pytest.ini
+      - ./web/.coveragerc:/code/.coveragerc
+    ports:
+      - 8000:8000
