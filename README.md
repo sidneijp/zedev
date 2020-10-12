@@ -6,12 +6,12 @@
 
 ## URLs
 
-- http://locahost:8000/api/ -> root REST API
+-  http://locahost:8000/api/ -> root REST API
 
 ## Dependencies
 
-- docker >= 19.03
-- docker-compose >= 1.25
+-  docker >= 19.03
+-  docker-compose >= 1.25
 
 ## Quickstart
 
@@ -39,7 +39,6 @@ Run database migrations:
 
 ```shell script
 docker-compose run --rm web src/manage.py migrate
-```
 ```
 
 ## Running tests

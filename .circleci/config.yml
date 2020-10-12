@@ -27,6 +27,7 @@ jobs:
                 command: |
                     export BUILD_VERSION=`echo "$CIRCLE_SHA1" | cut -c 1-8`;
                     docker-compose -f docker-compose.yml -f docker-compose.test.yml up -d --no-build
+                    sleep 6
             - run:
                 name: Run Backend's tests
                 command: |
