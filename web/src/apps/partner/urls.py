@@ -1,8 +1,12 @@
-from rest_framework.routers import DefaultRouter
+from rest_framework.routers import DefaultRouter, Route
 
-from . import views
+from . import views, routers
 
-router = DefaultRouter()
+router = routers.DynamicCustomRouter()
 router.register('partners', views.PartnerViewSet)
+router.add_action(
+    'nearest', detail=True, methods=['get'],
+    lookup_value=r'(?P<coordinates>-?\d+(.\d+)?,-?\d+(.\d+)?)'
+)
 
 urlpatterns = router.urls
