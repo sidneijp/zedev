@@ -13,4 +13,4 @@ class Partner(models.Model):
         verbose_name_plural = 'Partners'
 
     def __str__(self):
-        return ''
+        return f'{self.document}'
