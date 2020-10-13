@@ -6,12 +6,12 @@
 
 ## URLs
 
-  - http://locahost:8000/api/ -> root REST API
+- http://locahost:8000/api/ -> root REST API
 
 ## Dependencies
 
-  - docker >= 19.03
-  - docker-compose >= 1.25
+- [docker](https://docs.docker.com/engine/install/) >= 19.03
+- [docker-compose](https://docs.docker.com/compose/install/) >= 1.25
 
 ## Quickstart
 
@@ -40,6 +40,64 @@ Run database migrations:
 ```shell script
 docker-compose run --rm web src/manage.py migrate
 ```
+
+## Usage
+
+After the project is up and running try some API calls:
+
+- Create a partner:
+
+```shell script
+curl -X POST 'http://0.0.0.0:8000/api/partners/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "tradingName": "Adega da Cerveja - Pinheiros",
+  "ownerName": "Zé da Silva",
+  "document": "51321238910001",
+  "coverageArea": {
+    "type": "MultiPolygon",
+    "coordinates": [
+      [[[30, 20], [45, 40], [10, 40], [30, 20]]],
+      [[[15, 5], [40, 10], [10, 20], [5, 10], [15, 5]]]
+    ]
+  },
+  "address": {
+    "type": "Point",
+    "coordinates": [-47.57421, -21.785741]
+  }
+}'
+```
+
+- Retrieve it by it's id:
+
+```shell script
+curl -X GET 'http://0.0.0.0:8000/api/partners/1/' --header 'Content-Type: application/json'
+```
+
+- Try to create more partners then list them all:
+
+``` shell script
+curl -X GET 'http://0.0.0.0:8000/api/partners/' --header 'Content-Type: application/json'
+```
+
+- You can also list them filtering by those who cover a certain coordinate:
+
+``` shell script
+curl -G -X GET 'http://0.0.0.0:8000/api/partners/' --data-urlencode 'address={"type": "Point", "coordinates": [15, 10]}' --header 'Content-Type: application/json'
+```
+* in this case, lat=15, long=10
+
+- To get the nearest partner that cover a coordinate, use:
+
+```shell script
+curl -X GET 'http://0.0.0.0:8000/api/partners/15,10/nearest/' --header 'Content-Type: application/json'
+```
+
+* in this case, lat=15, long=10
+
+## Deploy to production environment
+
+The aplication uses docker to run so it can run in any platform that supports it or you can install docker deamon in the production host an run it.
 
 ## Running tests
 
