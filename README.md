@@ -2,7 +2,7 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/84409485c32544089086be4e94f9b6c2)](https://www.codacy.com/manual/sidneijp/zedev?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sidneijp/zedev&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/84409485c32544089086be4e94f9b6c2)](https://www.codacy.com/manual/sidneijp/zedev?utm_source=github.com&utm_medium=referral&utm_content=sidneijp/zedev&utm_campaign=Badge_Coverage)
-[![CircleCI](https://circleci.com/gh/sidneijp/zedev.svg?style=svg)](https://app.circleci.com/pipelines/github/sidneijp/zedev)
+[![CircleCI](https://circleci.com/gh/sidneijp/zedev.svg?style=shield&circle-token=61b856b5e9b988edb6ef0b7912aa062e7c4540b3)](https://app.circleci.com/pipelines/github/sidneijp/zedev)
 
 ## URLs
 
