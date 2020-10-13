@@ -1,6 +1,8 @@
 from django.contrib.gis.db import models
 from django.contrib.gis.db.models.functions import GeometryDistance
 
+from main.utils import remove_non_numeric
+
 
 class Partner(models.Model):
     tradingName = models.CharField(max_length=100)
@@ -15,6 +17,14 @@ class Partner(models.Model):
 
     def __str__(self):
         return f'{self.document}'
+
+    def save(self, *args, **kwargs):
+        self.clean_document()
+        super().save(*args, **kwargs)
+
+    def clean_document(self):
+        if self.document:
+            self.document = remove_non_numeric(self.document)
 
     @classmethod
     def get_nearest_inside_coverage(cls, point, queryset=None):

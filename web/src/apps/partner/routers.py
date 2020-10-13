@@ -9,7 +9,7 @@ class DynamicCustomRouter(DefaultRouter):
         name = '{basename}'
         initkwargs = {'suffix': 'List'}
         if detail:
-            name = f'{name}-detail'
+            name = f'{name}-{action_name}-detail'
             initkwargs = {'suffix': 'Instance'}
 
         url_path = url_path or rf'{lookup_value}/{action_name}'
