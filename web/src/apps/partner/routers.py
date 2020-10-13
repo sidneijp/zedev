@@ -4,12 +4,11 @@ from rest_framework.routers import DefaultRouter, Route
 class DynamicCustomRouter(DefaultRouter):
     def add_action(
             self, action_name, url_path=None, methods=[], detail=False,
-            lookup_value=None
+            lookup_value='[^/.]+'
     ):
         name = '{basename}'
         initkwargs = {'suffix': 'List'}
         if detail:
-            assert lookup_value is not None
             name = f'{name}-detail'
             initkwargs = {'suffix': 'Instance'}
 
@@ -20,7 +19,6 @@ class DynamicCustomRouter(DefaultRouter):
         for method in methods:
             mapping[method.lower()] = action_name
 
-        print (url, mapping, name, detail, initkwargs)
         self.routes.append(
             Route(
                 url=url,

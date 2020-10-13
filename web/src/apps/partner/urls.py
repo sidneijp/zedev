@@ -1,5 +1,3 @@
-from rest_framework.routers import DefaultRouter, Route
-
 from . import views, routers
 
 router = routers.DynamicCustomRouter()
