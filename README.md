@@ -15,18 +15,18 @@
 
 ## Quickstart
 
-Build container's image:
-
-```shell script
-docker-compose build
-```
-
 Prepare environment:
 
 ```shell script
 cp .env.sample .env
 cp web/.env.sample web/.env
 # edit .env and web/.env if necessary 
+```
+
+Build container's image:
+
+```shell script
+docker-compose build
 ```
 
 Run application services:
