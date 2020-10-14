@@ -6,7 +6,7 @@
 
 ## URLs
 
-- [Root REST API - local](http://locahost:8000/api/)
+- [Root REST API - local](http://0.0.0.0:8000/api/)
 - [Docker image on Docker Hub](https://hub.docker.com/repository/docker/sidneijp/zedev)
 - [Codacy's analysis](https://app.codacy.com/gh/sidneijp/zedev/dashboard?branch=master)
 - [GitHub repository](https://github.com/sidneijp/zedev)
