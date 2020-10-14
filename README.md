@@ -6,7 +6,11 @@
 
 ## URLs
 
-- http://locahost:8000/api/ -> root REST API
+- [Root REST API - local](http://locahost:8000/api/)
+- [Docker image on Docker Hub](https://hub.docker.com/repository/docker/sidneijp/zedev)
+- [Codacy's analysis](https://app.codacy.com/gh/sidneijp/zedev/dashboard?branch=master)
+- [GitHub repository](https://github.com/sidneijp/zedev)
+- [CircleCI pipelines](https://app.circleci.com/pipelines/github/sidneijp/zedev)
 
 ## Dependencies
 
